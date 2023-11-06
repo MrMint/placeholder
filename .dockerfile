@@ -2,6 +2,7 @@ FROM node:latest AS build
 RUN apt-get update && apt-get install -y --no-install-recommends dumb-init
 WORKDIR /usr/src/app
 COPY package*.json /usr/src/app/
+RUN npm ci --only=production
 
 FROM node:lts-bullseye-slim
 
