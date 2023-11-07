@@ -7,6 +7,8 @@ import app from "./app.js";
  */
 const fastify = Fastify({
   logger: true,
+
+  bodyLimit: 10 * 1024 * 1024, // Default Limit set to 10MB
 });
 
 app(fastify);
